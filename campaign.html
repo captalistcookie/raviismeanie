@@ -16,7 +16,8 @@
         </section>
             </section>
           <div style="width:50%;">
-              <table class="container" style="padding-right: 0%;">
+            <button onclick="sortTable()">submit</button>
+              <table class="container" style="padding-right: 0%;" id="scoreTable">
                   <thead>
                     <tr>
                       <th>
@@ -34,42 +35,42 @@
                     <tr>
                       <td>1</td>
                       <td>iGT</td>
-                      <td>63</td>
+                      <td contenteditable="true">1</td>
                     </tr>
                     <tr>
                       <td>2</td>
                       <td>iGV</td>
-                      <td>52</td>
+                      <td contenteditable="true">1</td>
                     </tr>
                     <tr>
                       <td>3</td>
                       <td>Expansion</td>
-                      <td>50</td>
+                      <td contenteditable="true">1</td>
                     </tr>
                     <tr>
                       <td>4</td>
                       <td>oGV</td>
-                      <td>49</td>
+                      <td contenteditable="true">1</td>
                     </tr>
                     <tr>
                       <td>5</td>
                       <td>MKT</td>
-                      <td>34</td>
+                      <td contenteditable="true">1</td>
                     </tr>
                     <tr>
                       <td>6</td>
                       <td>oGET</td>
-                      <td>32</td>
+                      <td contenteditable="true">1</td>
                     </tr>
                     <tr>
                       <td>7</td>
                       <td>TM</td>
-                      <td>30</td>
+                      <td contenteditable="true">1</td>
                     </tr>
                     <tr>
                       <td>8</td>
                       <td>FO</td>
-                      <td>8</td>
+                      <td contenteditable="true">1</td>
                     </tr>
                   </tbody>
                 </table>
@@ -98,6 +99,27 @@
           }
         } 
       }
+      function changeScore(){
+        var score = prompt("Enter the score");
+        if (score != null) {
+          document.getElementById("score").innerHTML = score;
+          }
+      }
+      function sortTable() {
+        var table, rows, switching, i, x,y, shouldSwitch;
+        table = document.getElementById("scoreTable");
+        switcing = true;
+        rows = table.rows;
+        for ( i = 1; i < (rows.length - 1); i++){
+            shouldSwitch = false;
+            x = rows[i].getElementById("th")[0];
+            y = rows[i + 1].getElementById("th")[0];
+            if (Number(x.innerHTML) > Number(y.innerHTML)){
+              shouldSwitch = true;
+              break;
+            }
+        }
+}
       </script>
   </body>
          
